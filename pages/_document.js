@@ -12,7 +12,7 @@ class MyDocument extends Document {
     return (
       <Html lang={BLOG.LANG}>
         <Head>
-          <meta name="baidu-site-verification" content="codeva-LVUAZDMDui" />
+          <meta name="baidu-site-verification" content="codeva-fLPDflpQeV" />
           <link rel='icon' href={`${BLOG.BLOG_FAVICON}`} />
           {/* 预加载字体 */}
           {BLOG.FONT_AWESOME && <>
