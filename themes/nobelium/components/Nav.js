@@ -9,6 +9,7 @@ import { MenuItemCollapse } from './MenuItemCollapse'
 import LazyImage from '@/components/LazyImage'
 import RandomPostButton from './RandomPostButton'
 import SearchButton from './SearchButton'
+import DarkModeButton from '@/components/DarkModeButton'
 import { siteConfig } from '@/lib/config'
 
 const Nav = props => {
@@ -35,41 +36,43 @@ const Nav = props => {
     }
   }, [sentinalRef])
   return <>
-        <div className="observer-element h-4 md:h-12" ref={sentinalRef}></div>
-        <div
-            className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-12 py-8 bg-opacity-60 ${!fullWidth ? 'max-w-3xl px-4' : 'px-4 md:px-24'
-                }`}
-            id="sticky-nav"
-            ref={navRef}
-        >
-            <div className="flex items-center">
-                <Link href="/" aria-label={siteConfig('TITLE')}>
+    <div className="observer-element h-4 md:h-8" ref={sentinalRef}></div>
+    <div
+      className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-12 py-8 bg-opacity-60 ${!fullWidth ? 'max-w-3xl px-4' : 'px-4 md:px-24'
+        }`}
+      id="sticky-nav"
+      ref={navRef}
+    >
 
-                    <div className="h-6 w-6">
-                        {/* <SvgIcon/> */}
-                        {siteConfig('NOBELIUM_NAV_NOTION_ICON', null, CONFIG)
-                          ? <LazyImage src={siteInfo?.icon} width={24} height={24} alt={siteConfig('AUTHOR')} />
-                          : <SvgIcon />}
+      <Link href="/" aria-label={siteConfig('TITLE')}>
+        <div className="flex items-center">
+          <div className="h-6 w-6">
+            {/* <SvgIcon/> */}
+            {siteConfig('NOBELIUM_NAV_NOTION_ICON', null, CONFIG)
+              ? <LazyImage src={siteInfo?.icon} width={24} height={24} alt={siteConfig('AUTHOR')} />
+              : <SvgIcon />}
 
-                    </div>
+          </div>
 
-                </Link>
-                {navBarTitle
-                  ? (
-                        <p className="ml-2 font-medium text-gray-800 dark:text-gray-300 header-name">
-                            {navBarTitle}
-                        </p>
-                    )
-                  : (
-                        <p className="ml-2 font-medium text-gray-800 dark:text-gray-300 header-name whitespace-nowrap">
-                            {siteConfig('TITLE')}
-                            {/* ,{' '}<span className="font-normal">{siteConfig('DESCRIPTION')}</span> */}
-                        </p>
-                    )}
-            </div>
-            <NavBar {...props} />
+          {navBarTitle
+            ? (
+              <p className="ml-2 font-medium text-gray-800 dark:text-gray-300 header-name">
+                {navBarTitle}
+              </p>
+            )
+            : (
+              <p className="ml-2 font-medium text-gray-800 dark:text-gray-300 header-name whitespace-nowrap">
+                {siteConfig('TITLE')}
+                {/* ,{' '}<span className="font-normal">{siteConfig('DESCRIPTION')}</span> */}
+              </p>
+            )}
         </div>
-    </>
+
+      </Link>
+
+      <NavBar {...props} />
+    </div>
+  </>
 }
 
 const NavBar = props => {
@@ -102,22 +105,26 @@ const NavBar = props => {
   }
 
   return (
-        <div className="flex-shrink-0 flex">
-            <ul className="hidden md:flex flex-row">
-                {links?.map((link, index) => <MenuItemDrop key={index} link={link} />)}
-            </ul>
-            <div className='md:hidden'>
-                <Collapse collapseRef={collapseRef} isOpen={isOpen} type='vertical' className='fixed top-16 right-6'>
-                    <div className='dark:border-black bg-white dark:bg-black rounded border p-2 text-sm'>
-                        {links?.map((link, index) => <MenuItemCollapse key={index} link={link} onHeightChange={(param) => collapseRef.current?.updateCollapseHeight(param)}/>)}
-                    </div>
-                </Collapse>
-            </div>
+    <div className="flex-shrink-0 flex">
+      <ul className="hidden md:flex flex-row">
+        {links?.map((link, index) => <MenuItemDrop key={index} link={link} />)}
+      </ul>
+      <div className='md:hidden'>
+        <Collapse collapseRef={collapseRef} isOpen={isOpen} type='vertical' className='fixed top-16 right-6'>
+          <div className='dark:border-black bg-white dark:bg-black rounded border p-2 text-sm'>
+            {links?.map((link, index) => <MenuItemCollapse key={index} link={link} onHeightChange={(param) => collapseRef.current?.updateCollapseHeight(param)} />)}
+          </div>
+        </Collapse>
+      </div>
 
-            {JSON.parse(siteConfig('NOBELIUM_MENU_RANDOM_POST', null, CONFIG)) && <RandomPostButton {...props} />}
-            {JSON.parse(siteConfig('NOBELIUM_MENU_SEARCH_BUTTON', null, CONFIG)) && <SearchButton {...props}/>}
-            <i onClick={toggleOpen} className='fas fa-bars cursor-pointer px-5 flex justify-center items-center md:hidden'></i>
-        </div>
+
+      {JSON.parse(siteConfig('NOBELIUM_MENU_RANDOM_POST', null, CONFIG)) && <RandomPostButton {...props} />}
+      {JSON.parse(siteConfig('NOBELIUM_MENU_SEARCH_BUTTON', null, CONFIG)) && <SearchButton {...props} />}
+      <div className={'cursor-pointer hover:bg-black hover:bg-opacity-10 rounded-full w-10 h-10 flex justify-center items-center duration-200 transition-all'}>
+        <DarkModeButton {...props} />
+      </div>
+      <i onClick={toggleOpen} className='fas fa-bars cursor-pointer px-5 flex justify-center items-center md:hidden'></i>
+    </div>
   )
 }
 

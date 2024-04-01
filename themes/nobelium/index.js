@@ -56,7 +56,7 @@ const LayoutBase = props => {
 
         {/* 顶部导航栏 */}
         <Nav {...props} />
-        <section className={'out-container flex'}>
+        <section className={'out-container flex flex-grow'}>
           <div className={'flex-1 w-1xl'}></div>
           {/* 主区 */}
           <main id='out-wrapper' className={`flex-shrink-0 relative m-auto flex-grow w-full transition-all ${!fullWidth ? 'max-w-3xl px-4' : 'px-4 md:px-24'}`}>
@@ -104,7 +104,7 @@ const LayoutBase = props => {
         <Footer {...props} />
 
         {/* 右下悬浮 */}
-        <div className='fixed right-4 bottom-4'>
+        <div className='fixed right-4 bottom-20 z-40' >
           <JumpToTopButton />
         </div>
 

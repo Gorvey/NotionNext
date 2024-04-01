@@ -35,6 +35,7 @@ module.exports = withBundleAnalyzer({
     formats: ['image/avif', 'image/webp'],
     // 允许next/image加载的图片 域名
     domains: [
+      'badgen.net',
       'gravatar.com',
       'www.notion.so',
       'avatars.githubusercontent.com',
