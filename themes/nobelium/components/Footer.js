@@ -3,7 +3,7 @@
  * @Author: zengzhe
  * @Date: 2024-04-01 11:11:07
  * @LastEditors: zengzhe
- * @LastEditTime: 2024-04-01 16:50:05
+ * @LastEditTime: 2024-04-02 10:29:14
  * @Description:
  */
 // import DarkModeButton from '@/components/DarkModeButton'
@@ -216,9 +216,20 @@ export const Footer = props => {
       <hr className='border-gray-200 dark:border-gray-600' />
       <div className='my-4 text-sm leading-6'>
         <div className='flex align-baseline justify-between flex-wrap flex-col md:flex-row'>
-          <p>
-            © {siteConfig('AUTHOR')} {copyrightDate}
-          </p>
+          <div className='flex gap-2'>
+            <p >
+              © {siteConfig('AUTHOR')} {copyrightDate}
+            </p>
+            {siteConfig('CONTACT_GITHUB') && <a target='_blank' rel='noreferrer' title={'github'} href={siteConfig('CONTACT_GITHUB')} >
+              <i className='transform hover:scale-125 duration-150 fab fa-github dark:hover:text-red-400 hover:text-blue-600' />
+            </a>}
+            {siteConfig('CONTACT_EMAIL') && <a target='_blank' rel='noreferrer' title={'email'} href={`mailto:${siteConfig('CONTACT_EMAIL')}`} >
+              <i className='fas fa-envelope transform hover:scale-125 duration-150 hover:text-blue-600' />
+            </a>}
+            {JSON.parse(siteConfig('ENABLE_RSS')) && <a target='_blank' rel='noreferrer' title={'RSS'} href={'/feed'} >
+              <i className='transform hover:scale-125 duration-150 fas fa-rss dark:hover:text-red-400 hover:text-blue-600' />
+            </a>}
+          </div>
           <div className='flex flex-wrap items-center gap-2 justify-end mt-2 md:mt-0'>
             <Notion />
             <NotionNext />
