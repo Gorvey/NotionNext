@@ -3,7 +3,7 @@
  * @Author: zengzhe
  * @Date: 2024-04-01 11:11:07
  * @LastEditors: zengzhe
- * @LastEditTime: 2024-04-02 10:29:14
+ * @LastEditTime: 2024-04-02 11:00:29
  * @Description:
  */
 // import DarkModeButton from '@/components/DarkModeButton'
@@ -226,7 +226,7 @@ export const Footer = props => {
             {siteConfig('CONTACT_EMAIL') && <a target='_blank' rel='noreferrer' title={'email'} href={`mailto:${siteConfig('CONTACT_EMAIL')}`} >
               <i className='fas fa-envelope transform hover:scale-125 duration-150 hover:text-blue-600' />
             </a>}
-            {JSON.parse(siteConfig('ENABLE_RSS')) && <a target='_blank' rel='noreferrer' title={'RSS'} href={'/feed'} >
+            {JSON.parse(siteConfig('ENABLE_RSS')) && <a target='_blank' rel='noreferrer' title={'RSS'} href={'/rss/feed.xml'} >
               <i className='transform hover:scale-125 duration-150 fas fa-rss dark:hover:text-red-400 hover:text-blue-600' />
             </a>}
           </div>
