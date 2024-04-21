@@ -265,7 +265,6 @@ a.avatar-wrapper {
   text-orientation: upright; /* 文字方向正常 */
 }
 
-
 /**
  Animated Theme Toggle
  */
@@ -288,3 +287,28 @@ a.avatar-wrapper {
 ::view-transition-new(root) {
   z-index: 1;
 }
+
+.notion-bookmark {
+  transition: border 0.3s;
+}
+.notion-bookmark > div:first-child {
+  min-height: 106px;
+}
+/* AI-Summary S */
+.ai-tag {
+  font-size: 12px;
+  background-color: #2454ff;
+  box-shadow: 0 8px 12px -3px #0f6eae23;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 12px;
+  line-height: 12px;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* AI-Summary E */

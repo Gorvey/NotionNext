@@ -3,7 +3,7 @@
  * @Author: zengzhe
  * @Date: 2024-04-01 11:11:07
  * @LastEditors: zengzhe
- * @LastEditTime: 2024-04-02 11:00:29
+ * @LastEditTime: 2024-04-21 19:47:22
  * @Description:
  */
 // import DarkModeButton from '@/components/DarkModeButton'
@@ -71,7 +71,7 @@ const NotionNext = () => {
         height='20'
         role='img'
         aria-label='Frame: notion-next'>
-        <title>Frame: notion-next</title>
+        <title>Frame: Notion-next</title>
         <linearGradient id='s' x2='0' y2='100%'>
           <stop offset='0' stop-color='#bbb' stop-opacity='.1' />
           <stop offset='1' stop-opacity='.1' />
@@ -115,7 +115,7 @@ const NotionNext = () => {
             fill-opacity='.3'
             transform='scale(.1)'
             textLength='630'>
-            notion-next
+            Notion-next
           </text>
           <text
             x='805'
@@ -123,7 +123,7 @@ const NotionNext = () => {
             transform='scale(.1)'
             fill='#fff'
             textLength='630'>
-            notion-next
+            Notion-next
           </text>
         </g>
       </svg>
@@ -166,7 +166,7 @@ const Vercel = () => {
             fill-opacity='.3'
             transform='scale(.1)'
             textLength='370'>
-            hosted
+            Hosted
           </text>
           <text
             x='245'
@@ -174,7 +174,7 @@ const Vercel = () => {
             transform='scale(.1)'
             fill='#fff'
             textLength='370'>
-            hosted
+            Hosted
           </text>
           <text
             aria-hidden='true'
@@ -184,7 +184,7 @@ const Vercel = () => {
             fill-opacity='.3'
             transform='scale(.1)'
             textLength='330'>
-            vercel
+            Vercel
           </text>
           <text
             x='675'
@@ -192,7 +192,7 @@ const Vercel = () => {
             transform='scale(.1)'
             fill='#fff'
             textLength='330'>
-            vercel
+            Vercel
           </text>
         </g>
       </svg>
