@@ -29,7 +29,7 @@ const AISummary = props => {
 
   return (
     summary ?
-      <div className="ai-summary p-3 bg-gray-100 rounded-xl mt-4 shadow-lg dark:bg-gray-900">
+      <div className="ai-summary border p-3 bg-gray-100 rounded-xl mt-4 shadow-lg dark:bg-gray-900">
         <div className='flex items-center justify-between'>
           <div className='font-semibold'>
             <i
@@ -37,7 +37,7 @@ const AISummary = props => {
           </div>
           <a target='_blank' href='https://chatglm.cn/' className="shadow-sm ai-tag" rel="noreferrer">由 GLM-4 生成</a>
         </div>
-        <div className="text-base break-all my-2 ai-explanation rounded-xl bg-white p-2 shadow dark:bg-gray-700">
+        <div className="border text-base break-all my-2 ai-explanation rounded-xl bg-white p-2 shadow dark:bg-gray-700">
           <span ref={typing}></span>
         </div>
         <div className='flex items-center justify-between'>
