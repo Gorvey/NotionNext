@@ -2,7 +2,7 @@ name: Update Vercel Deployment
 
 on:
   schedule:
-    - cron: '*/5 * * * *' # 每5分钟运行一次，用于测试
+    - cron: '0 19 * * *' # 会在UTC时间的每天晚上7点执行任务，这正好对应北京时间的每天凌晨3点
 
 jobs:
   update-vercel:
