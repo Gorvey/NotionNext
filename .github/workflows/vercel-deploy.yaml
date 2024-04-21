@@ -1,0 +1,14 @@
+name: Update Vercel Deployment
+
+on:
+  schedule:
+    - cron: '0 3 * * *' # 每日凌晨3点
+
+jobs:
+  update-vercel:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          vercelID: ${{ secrets.vercelID }}
+        run: |
+          curl -X POST https://api.vercel.com/v1/integrations/deploy/$vercelID
