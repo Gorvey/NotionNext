@@ -22,13 +22,13 @@ const BlogPost = ({ post }) => {
           </time>
         </header>
         <main>
-          {!showPreview && <p className="hidden md:block leading-8 text-gray-700 dark:text-gray-300">
+          {!showPreview && <p className="overflow-ellipsis truncate hidden md:block leading-8 text-gray-700 dark:text-gray-300">
             {post.summary}
           </p>}
           {showPreview && post?.blockMap && (
             <div className="overflow-ellipsis truncate">
               <NotionPage post={post} />
-              <hr className='border-dashed py-4'/>
+              <hr className='border-dashed py-4' />
             </div>
           )}
         </main>

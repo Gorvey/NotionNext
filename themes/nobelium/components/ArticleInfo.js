@@ -53,7 +53,9 @@ export const ArticleInfo = props => {
           )}
         </div>
       </section>
-      {post?.summary ? <AISummary {...props} /> : <></>}
+      <div className='ai-summary-wrap'>
+        {post?.summary ? <AISummary {...props} /> : <></>}
+      </div>
     </div>
   )
 }

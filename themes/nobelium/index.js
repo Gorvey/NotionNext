@@ -59,7 +59,7 @@ const LayoutBase = props => {
         <section className={'out-container flex flex-grow'}>
           <div className={'flex-1 w-1xl'}></div>
           {/* 主区 */}
-          <main id='out-wrapper' className={`flex-shrink-0 relative m-auto flex-grow w-full transition-all ${!fullWidth ? 'max-w-3xl px-4' : 'px-4 md:px-24'}`}>
+          <main id='out-wrapper' className={`flex-shrink-0 relative m-auto flex-grow w-full transition-all ${!fullWidth ? 'max-w-4xl px-4' : 'px-4 md:px-24'}`}>
 
             <Transition
               show={!onLoading}
@@ -82,7 +82,7 @@ const LayoutBase = props => {
           {fullWidth
             ? <div className='{flex-1 w-1xl}'></div>
             : <div className={'flex-1 w-1xl  dark:border-transparent relative z-10 '}>
-              <div className='hidden xl:block px-6 sticky top-14'>
+              <div className='hidden min-[1220px]:block px-6 sticky top-14'>
                 <Transition
                   show={!onLoading}
                   appear={true}
